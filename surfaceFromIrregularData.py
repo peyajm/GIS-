@@ -3,14 +3,14 @@
 
 import numpy as np
 import pandas as pd
-
+import os
 # Create data with x and y random in the [-2, 2] segment, and z a
 # Gaussian function of x and y.
 np.random.seed(12345)
 x = 4 * (np.random.random(500) - 0.5)
 y = 4 * (np.random.random(500) - 0.5)
-
-df=pd.read_csv('C:\\Users\\minij\\Desktop\\Aerogram\\pollution_data.csv')
+absolute_path = os.path.abspath(os.path.dirname('pollution_data.csv'))
+df = pd.read_csv(absolute_path + '/pollution_data.csv')
 data=df.values
 X1=data[:,15]
 Y1=data[:,16]
